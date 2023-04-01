@@ -1,49 +1,9 @@
 fileFormatVersion: 2
-guid: cbc62e11356b0ab41b899f2076ebaa42
+guid: 5acd852573abfe64da1952819b386497
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Base
-    second: {fileID: 2100000, guid: da8aba6fe66c062448407aa0d55f6fda, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Brick_Eff
-    second: {fileID: 2100000, guid: 75d1a661782e06049a0b8b11770e0d74, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Brick_Main
-    second: {fileID: 2100000, guid: 27aebc16d0b47f947aa0688c6d3829f9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cave
-    second: {fileID: 2100000, guid: d68d8ab3668cf9d4b96d96a0f4eced84, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: 1c8fcb6b9d59ab14dac9bcaf6679afcf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Theme_A
-    second: {fileID: 2100000, guid: f6c3ab4699813cd489db15e922db7fc1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Theme_B
-    second: {fileID: 2100000, guid: 9b8af3254ea4bf4479d173db5fd59e19, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Water
-    second: {fileID: 2100000, guid: 88b1fcdecddba4b4983d805eca576938, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
