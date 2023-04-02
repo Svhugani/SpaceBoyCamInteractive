@@ -1,9 +1,54 @@
 fileFormatVersion: 2
-guid: 3dd54def2827da8448fff77b0a840105
+guid: da67b2a75d9f03f47bf29358ab30f84e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BGGround
+    second: {fileID: 2100000, guid: 0238c2d148018c84e999d1183e73021d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassMirror
+    second: {fileID: 2100000, guid: fa5fc0e095e9f2d4a9aa63435338b8f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: 0bd13bc8babacd1408cb12a5301bf39f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: c241bec4e9c2c8b40b0e8067b7cef7a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves
+    second: {fileID: 2100000, guid: ed4bb0242930fc246866a963ae23ac20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MirrorOuter
+    second: {fileID: 2100000, guid: 5690f219e0ca17d43bc23a9ea1127caf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone
+    second: {fileID: 2100000, guid: a85bc6a0f5070d54b8d16c36d27102f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WarmLight
+    second: {fileID: 2100000, guid: 1d7ea58126c9feb4598e60c0caffb793, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteBase
+    second: {fileID: 2100000, guid: ffb7649144b166a4d8d2903834271dc1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
