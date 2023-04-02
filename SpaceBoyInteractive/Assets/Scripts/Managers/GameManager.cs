@@ -3,10 +3,35 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace HomeomorphicGames
 {
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(GameManager))]
+    public class GameManager_Editor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            var manager = (GameManager)target;
+            if (manager == null) return;
+
+            base.OnInspectorGUI();
+            if (GUILayout.Button("Set DoF to character"))
+            {
+                manager.PostProcessManager.SetDoFFocusDist(manager.CharacterManager.DistanceFromCamera());
+            }
+        }
+    }
+#endif
+
     public class GameManager : AbstractManager
     {
+        public static GameManager Instance { get; private set; }    
+
         [Header("MANAGERS")]
         [SerializeField] private EnvironmentManager environmentManager;
         [SerializeField] private AudioManager audioManager;
@@ -32,6 +57,12 @@ namespace HomeomorphicGames
             await Task.WhenAll(tasks);
         }
 
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this) Destroy(this);
+            else Instance = this;
+        }
         private void Start()
         {
             _ = Prepare();
@@ -39,6 +70,8 @@ namespace HomeomorphicGames
 
         private void Update()
         {
+            PostProcessManager.SetDoFFocusDist(CharacterManager.DistanceFromCamera());
+
             if(Input.GetKeyDown(KeyCode.Alpha1))
             {
                 characterManager.MoveTo(environmentManager.GetViewer());
@@ -62,6 +95,11 @@ namespace HomeomorphicGames
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
                 characterManager.MoveTo(environmentManager.GetStone());
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                postProcessManager.DistortionEffect();
             }
         }
     }

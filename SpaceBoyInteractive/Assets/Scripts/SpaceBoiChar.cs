@@ -10,6 +10,8 @@ namespace HomeomorphicGames
         [Header("COMPONENTS")]
         [SerializeField] private NavMeshAgent agent;
         [SerializeField] private Animator animator;
+        [Header("TARGETS")]
+        [SerializeField] private Transform dofTarget;
         [Header("MOVEMENT PARAMETERS")]
         [SerializeField] private float walkParameter = 1f;
         [SerializeField] private float runParameter = 3f;
@@ -22,10 +24,12 @@ namespace HomeomorphicGames
 
         private float _targetMoveParam;
         private float _currentMoveParam;
+        private Coroutine _agentMovementRoutine;
 
         public delegate void MovementEvent(Vector3 position);
         public event MovementEvent OnDestinationReached;
         public event MovementEvent OnDestinationSet;
+        
 
         private int _animSpeedHash;
         private void Awake()
@@ -35,15 +39,30 @@ namespace HomeomorphicGames
 
         private void OnEnable()
         {
-
+            OnDestinationReached += OnDestinationReached;
         }
 
         private void OnDisable()
         {
-
+            OnDestinationReached -= OnDestinationReached;
         }
 
-        private void UpdateAnimator(float timeDelta)
+        public void DebugTest(string msg, Vector3 pos)
+        {
+            Debug.Log(msg + pos.ToString());
+        }
+
+        public void DebugDestReached(Vector3 pos)
+        {
+            DebugTest("Destination reached: ", pos);
+        }
+
+        public Vector3 GetDofTargetPos()
+        {
+            return dofTarget.position;
+        }
+
+        private void UpdateAnimator()
         {
             _currentMoveParam = _targetMoveParam * velocityResponse.Evaluate(agent.velocity.magnitude / agent.speed);
             animator.SetFloat(_animSpeedHash, _currentMoveParam);
@@ -69,23 +88,37 @@ namespace HomeomorphicGames
 
             agent.destination = destination;
             _currentMoveParam = animator.GetFloat(_animSpeedHash);
+
+            OnDestinationSet?.Invoke(destination);
+
+            if (_agentMovementRoutine != null) StopCoroutine(_agentMovementRoutine);
+            _agentMovementRoutine = StartCoroutine(AgentMvementRoutine());
         }
 
 
         private void Update()
         {
-            UpdateAnimator(Time.deltaTime);
+            UpdateAnimator();
 
-            if (Input.GetMouseButtonDown(0))
+
+/*            if (Input.GetMouseButtonDown(0))
             {
                 RaycastHit hitInfo;
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo))
                 {
                     MoveTo(hitInfo.point);
                 }
-            }
+            }*/
         }
 
+        private IEnumerator AgentMvementRoutine()
+        {
+            while (agent.remainingDistance > agent.stoppingDistance * 1.05f)
+            {
+                yield return null;
+            }
+            OnDestinationReached?.Invoke(agent.destination);
+        }
 
         private void OnAnimatorMove()
         {

@@ -25,11 +25,11 @@ namespace HomeomorphicGames
 
         public override async Task Prepare()
         {
-            PlayBackgroundMusic();
+            if(musicClips.Length > 0) PlayBackgroundMusic();
             await Task.Yield();
         }
 
-        void NextTrack(int step)
+        private void NextTrack(int step)
         {
             _trackId = (_trackId + step) % musicClips.Length;
             musicSource.clip = musicClips[_trackId];

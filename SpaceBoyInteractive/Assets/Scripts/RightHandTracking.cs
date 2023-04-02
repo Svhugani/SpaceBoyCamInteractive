@@ -9,12 +9,12 @@ namespace HomeomorphicGames.Sny.Core
         
         private void Update()
         {
-/*            float currentRadius = _sqrRange;
+            float currentRadius = _sqrRange;
             float rigWeight = 0;
 
             Vector3 restTarget = this.transform.position;
 
-            foreach (var point in EnvironmentManager.PointsOfInterest)
+            foreach (var point in PointOfInterest.actives)
             {
                 Vector3 delta = point.transform.position - this.transform.position;
                 float dist = delta.sqrMagnitude;
@@ -29,7 +29,7 @@ namespace HomeomorphicGames.Sny.Core
             }
 
             target.position = Vector3.Lerp(target.position, restTarget, Time.deltaTime * smoothing);
-            targetRig.weight = Mathf.Lerp(targetRig.weight, rigResponseCurve.Evaluate(rigWeight), Time.deltaTime * smoothing);*/
+            targetRig.weight = Mathf.Lerp(targetRig.weight, rigResponseCurve.Evaluate(rigWeight), Time.deltaTime * smoothing);
         }
     }
 }

@@ -14,5 +14,10 @@ namespace HomeomorphicGames
         {
             BoiChar.MoveTo(poi.InterestPosition());
         }
+
+        public float DistanceFromCamera()
+        {
+            return Vector3.Distance(boiChar.GetDofTargetPos(), Camera.main.transform.position);
+        }
     }
 }
