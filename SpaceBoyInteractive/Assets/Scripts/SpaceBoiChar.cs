@@ -89,7 +89,7 @@ namespace HomeomorphicGames
 
         private void OnAnimatorMove()
         {
-            Debug.Log("Animator delta magnitude: " + animator.deltaPosition.magnitude);
+            //Debug.Log("Animator delta magnitude: " + animator.deltaPosition.magnitude);
         }
     }
 }

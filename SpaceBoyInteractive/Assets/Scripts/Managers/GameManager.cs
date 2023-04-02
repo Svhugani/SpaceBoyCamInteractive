@@ -45,6 +45,16 @@ namespace HomeomorphicGames
             {
                 characterManager.MoveTo(environmentManager.GetMushroom());
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                characterManager.MoveTo(environmentManager.GetTree());
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                characterManager.MoveTo(environmentManager.GetStone());
+            }
         }
     }
 }
