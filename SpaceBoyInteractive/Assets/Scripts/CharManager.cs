@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 
 public class CharManager : MonoBehaviour
 {
-    [SerializeField] private Camera cam;
     [SerializeField] private CharacterController charController;
+    [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private float acceleration = .2f;
