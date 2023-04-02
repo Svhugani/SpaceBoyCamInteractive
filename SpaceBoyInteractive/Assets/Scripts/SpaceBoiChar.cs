@@ -39,12 +39,14 @@ namespace HomeomorphicGames
 
         private void OnEnable()
         {
-            OnDestinationReached += OnDestinationReached;
+            OnDestinationReached += DebugDestReached;
+            OnDestinationSet += DebugDestStarted;
         }
 
         private void OnDisable()
         {
-            OnDestinationReached -= OnDestinationReached;
+            OnDestinationReached -= DebugDestReached;
+            OnDestinationSet -= DebugDestStarted;   
         }
 
         public void DebugTest(string msg, Vector3 pos)
@@ -55,6 +57,11 @@ namespace HomeomorphicGames
         public void DebugDestReached(Vector3 pos)
         {
             DebugTest("Destination reached: ", pos);
+        }
+
+        public void DebugDestStarted(Vector3 pos)
+        {
+            DebugTest("Destination Started: ", pos);
         }
 
         public Vector3 GetDofTargetPos()
