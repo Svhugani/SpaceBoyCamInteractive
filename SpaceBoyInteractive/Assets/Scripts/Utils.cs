@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-namespace HomeomorphicGames.Sny.Core
+namespace HomeomorphicGames
 {
     public static class Utils
     {
-        public enum Importance { Main, Secondary, Tertiary }
+        public enum ObjectImportance { Main, Secondary, Tertiary }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HomeomorphicGames.Sny
+namespace HomeomorphicGames
 {
     [RequireComponent(typeof(Animator))]
     public class InteractableObject : EnvironmentObject

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
 
-namespace HomeomorphicGames.Sny.Core
+namespace HomeomorphicGames
 {
     public class HeadTracking : GeneralRigTracking
     {
@@ -17,7 +17,7 @@ namespace HomeomorphicGames.Sny.Core
 
             Vector3 restTarget = this.transform.position + this.transform.forward * 2f;
 
-            foreach (var point in EnvironmentManager.PointsOfInterest)
+            foreach (var point in PointOfInterest.actives)
             {
                 Vector3 delta = point.transform.position - this.transform.position;
                 float dist = delta.sqrMagnitude;

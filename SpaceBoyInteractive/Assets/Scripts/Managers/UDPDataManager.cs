@@ -4,13 +4,8 @@ using UnityEngine;
 
 namespace HomeomorphicGames
 {
-    public abstract class EnvironmentObject : MonoBehaviour
+    public class UDPDataManager : AbstractManager
     {
-        public virtual void Initialize()
-        {
-
-        }
-
 
     }
 }
