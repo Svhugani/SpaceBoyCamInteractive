@@ -69,9 +69,9 @@ namespace HomeomorphicGames
         {
             if (Input.GetKeyDown(KeyCode.E)) StartReceiving();
             if(Input.GetKeyDown(KeyCode.Q)) StopReceiving();
-
+/*
             Debug.Log("------------------------------------------");
-            Debug.Log("Data: " + _data);
+            Debug.Log("Data: " + _data);*/
         }
     }
 }

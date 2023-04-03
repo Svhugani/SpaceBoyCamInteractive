@@ -79,7 +79,8 @@ namespace HomeomorphicGames
         {
             float dist = Vector3.Distance(destination, this.transform.position);
 
-            if (dist >= minDistanceToRun)
+            //if (dist >= minDistanceToRun)
+            if (false)
             {
                 _targetMoveParam = runParameter;
                 agent.speed = runSpeed;
@@ -94,6 +95,7 @@ namespace HomeomorphicGames
             }
 
             agent.destination = destination;
+            
             _currentMoveParam = animator.GetFloat(_animSpeedHash);
 
             OnDestinationSet?.Invoke(destination);

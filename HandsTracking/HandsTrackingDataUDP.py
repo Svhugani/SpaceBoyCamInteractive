@@ -6,6 +6,8 @@ import mediapipe as mp
 CAM_WIDTH = 640
 CAM_HEIGHT = 480
 
+
+
 cam_feed = cv2.VideoCapture(0)
 cam_feed.set(3, CAM_WIDTH)
 cam_feed.set(4, CAM_HEIGHT)

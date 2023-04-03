@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HomeomorphicGames.Sny.Core
+namespace HomeomorphicGames
 {
-    public class RightHandTracking : GeneralRigTracking
+    public class HandTracking : GeneralRigTracking
     {
-        
         private void Update()
         {
             float currentRadius = _sqrRange;
