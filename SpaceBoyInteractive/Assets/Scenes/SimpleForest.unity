@@ -894,12 +894,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2.9724846
+      outSlope: 2.9724846
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.045226123
     - serializedVersion: 3
       time: 1
       value: 1
@@ -1334,6 +1334,7 @@ Transform:
   - {fileID: 1104427426}
   - {fileID: 372374618}
   - {fileID: 612949813}
+  - {fileID: 751337577}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2157,6 +2158,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 737304779}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &751337576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751337577}
+  - component: {fileID: 751337578}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751337577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751337576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 726733523}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &751337578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751337576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15a7498e4271454aaaaffd6bbf98ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &766768383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1189529853000058984, guid: 641a9d436459f1146a19a0648c5b9abc,
@@ -3279,6 +3324,7 @@ MonoBehaviour:
   characterManager: {fileID: 1247618143}
   udpDataManager: {fileID: 372374619}
   postProcessManager: {fileID: 612949814}
+  inputManager: {fileID: 0}
 --- !u!4 &1582577466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5372056943023685468, guid: 641a9d436459f1146a19a0648c5b9abc,
