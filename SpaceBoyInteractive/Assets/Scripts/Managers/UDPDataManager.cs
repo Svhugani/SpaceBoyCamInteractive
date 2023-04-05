@@ -46,7 +46,7 @@ namespace HomeomorphicGames
         private string _data;
         private bool _collectData = false;
 
-        public string Data { get { return _data; } }
+        public List<Vector3> HandData { get { return HandTrackDataParser.HandTracking(_data); } }
 
         public void StartReceiving()
         {
@@ -63,7 +63,7 @@ namespace HomeomorphicGames
             
             if(_reveiveDataThread != null)_reveiveDataThread.Abort();
 
-            _client.Close();
+            if(_client != null) _client.Close();
 
             IsBusy = false;
 
@@ -87,6 +87,7 @@ namespace HomeomorphicGames
                 catch(Exception exc)
                 {
                     Debug.Log(exc.ToString());
+                    _data = null;
                 }
 
             }
@@ -98,10 +99,5 @@ namespace HomeomorphicGames
             StopReceiving();
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.E)) StartReceiving();
-            if(Input.GetKeyDown(KeyCode.Q)) StopReceiving();
-        }
     }
 }

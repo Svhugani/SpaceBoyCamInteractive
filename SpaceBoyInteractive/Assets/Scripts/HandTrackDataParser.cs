@@ -10,6 +10,8 @@ namespace HomeomorphicGames
         {
             List<Vector3> result = new List<Vector3>(); 
 
+            if (rawData == null) return result;
+
             rawData = rawData.Trim();
             rawData = rawData.Replace("[", "").Replace("]", "");
             string[] splittedData = rawData.Split(",");

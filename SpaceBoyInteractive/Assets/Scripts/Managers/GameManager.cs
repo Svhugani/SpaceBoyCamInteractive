@@ -43,7 +43,7 @@ namespace HomeomorphicGames
         public EnvironmentManager EnvironmentManager { get {return environmentManager ;}}
         public AudioManager AudioManager { get {return audioManager; }}
         public CharacterManager CharacterManager { get {return characterManager; }}
-        public UDPDataManager UDPDataManager { get {return UDPDataManager; }}
+        public UDPDataManager UDPDataManager { get {return udpDataManager; }}
         public PostProcessManager PostProcessManager { get {return postProcessManager; }}
         public InputManager InputManager { get { return inputManager; }}    
 
