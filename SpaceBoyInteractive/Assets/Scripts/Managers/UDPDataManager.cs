@@ -46,7 +46,6 @@ namespace HomeomorphicGames
         private string _data;
         private bool _collectData = false;
 
-        public List<Vector3> HandData { get { return HandTrackDataParser.HandTracking(_data); } }
 
         public void StartReceiving()
         {
@@ -89,9 +88,13 @@ namespace HomeomorphicGames
                     Debug.Log(exc.ToString());
                     _data = null;
                 }
-
             }
             
+        }
+
+        public List<Vector3> GetHandData()
+        {
+            return HandTrackDataParser.HandTracking(_data);
         }
 
         private void OnApplicationQuit()
