@@ -1076,7 +1076,7 @@ MonoBehaviour:
   scaleValues: {x: 1, y: 1, z: -1}
   distMultiply: 1
   smoothing: 12
-  interactionDist: 1
+  interactionDist: 5
 --- !u!4 &404098778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6874584590210671055, guid: 641a9d436459f1146a19a0648c5b9abc,

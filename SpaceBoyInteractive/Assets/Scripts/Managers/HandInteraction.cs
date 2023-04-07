@@ -87,24 +87,27 @@ namespace HomeomorphicGames
 
         private Vector3 SetPosition(Vector3 positionData)
         {
-/*            Vector3 pos =  Camera.main.ViewportToWorldPoint(new Vector3(
-                scaleValues.x * positionData.x, 
-                scaleValues.y * positionData.y,
-                scaleValues.z * distMultiply * positionData.z));*/
-
-
             Vector3 pos = new Vector3(
                 scaleValues.x * (1 - positionData.x),
                 scaleValues.y * positionData.y,
                 scaleValues.z * distMultiply * positionData.z);
-            Debug.Log("Realtive pos: " + pos);
             return pos + offsetTransform.position;
         }
 
         private void Update()
         {
             TrackToData(GameManager.Instance.UDPDataManager.GetHandData(), smoothing * Time.deltaTime);
-            float targetWeight = IsFullHandDetected ? 1.0f : 0.0f;
+
+            float targetWeight = 0;
+            if (IsFullHandDetected)
+            {
+                float dist = Vector3.Distance(
+                    GameManager.Instance.EnvironmentManager.GetViewer().transform.position, 
+                    GameManager.Instance.CharacterManager.BoiChar.transform.position);
+                Debug.Log("Dist: " + dist);
+                if (dist < interactionDist) targetWeight = 1;
+                
+            }
             rig.weight = Mathf.Lerp(rig.weight, targetWeight, rigWeightSmoothing * Time.deltaTime);
         }
 
